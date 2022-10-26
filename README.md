@@ -1,3 +1,18 @@
+# smims-lab1
+
+## General
+Тема лабораторної роботи - ?
+Технологія для бекенду системи - ?
+Технологія для візуальної частини - ?
+
+## Development
+
+## Members
+- Чернов
+- Стойчев
+- Шадрін
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
