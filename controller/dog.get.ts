@@ -8,9 +8,5 @@ export default async (req: any, res: any) => {
     });
 
     res.status= 200;
-    return res.json({
-        status: 'success',
-        data: dogs.rows,
-        total: dogs.count,
-    });
+    return res.json(dogs.rows);
 }
