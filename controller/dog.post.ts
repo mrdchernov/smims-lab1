@@ -1,9 +1,9 @@
 const models = require('../db/models');
-import { IDog } from '../utils/types';
+import { Dog } from '../utils/types';
 import { dogDTOSchema } from '../utils/validator';
 
 export default async (req: any, res: any) => {
-    const dog  = req.body as IDog;
+    const dog  = req.body as Dog;
     try {
         const dogObj = await dogDTOSchema.validate(dog, { abortEarly: false });
         const dbObj = await models.dogs.create(dogObj);
