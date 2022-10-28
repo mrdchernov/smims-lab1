@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prestart": "sequelize db:migrate",
+    "prestart": "npm i pg && sequelize db:migrate",
     "lint": "next lint"
   },
   "dependencies": {
