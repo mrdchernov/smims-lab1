@@ -19,7 +19,7 @@ export default function CreateBreed(): JSX.Element {
         if (activeStep === 2) {
             try {
                 setLoader(true);
-                await fetch('/api/dog', {
+                await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/api/dog`, {
                     method: 'POST',
                     body: JSON.stringify(newDogBreed),
                     headers: {
