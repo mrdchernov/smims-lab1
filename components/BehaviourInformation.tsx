@@ -1,6 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import { Checkbox, FormControlLabel, Mark, Slider, TextField } from '@material-ui/core';
-import { Guard } from '../utils/mappings'
+import { Guard, Noise } from '../utils/mappings'
 import style from './general-info.module.css';
 import { Dog } from '../utils/types';
 
@@ -11,6 +11,7 @@ interface IStepProps {
 
 export default function BehaviourInformation(props: IStepProps) {
     const guardMarks: Mark[] = Object.keys(Guard).map((it) => ({ value: +it, label: Guard[it as keyof typeof Guard] }))
+    const noiseMarks: Mark[] = Object.keys(Noise).map((it) => ({ value: +it, label: Noise[it as keyof typeof Noise] }))
 
     return <div className={style.generalInfoWrapper}>
         <div className={style.item}>
@@ -28,6 +29,25 @@ export default function BehaviourInformation(props: IStepProps) {
                 valueLabelDisplay="auto"
                 step={1}
                 marks={guardMarks}
+                min={1}
+                max={3}
+            />
+        </div>
+        <div className={style.item}>
+            <Typography id="discrete-slider" gutterBottom>
+                Noise
+            </Typography>
+            <Slider
+                className={style.slider}
+                defaultValue={1}
+                value={props.breed.noise}
+                onChange={(_, value) => {
+                    props.setDogProperty('noise', value)
+                }}
+                aria-labelledby="discrete-slider"
+                valueLabelDisplay="auto"
+                step={1}
+                marks={noiseMarks}
                 min={1}
                 max={3}
             />

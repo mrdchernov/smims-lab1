@@ -3,7 +3,7 @@ import { Checkbox, FormControlLabel, Mark, Slider, TextField } from '@material-u
 import { GroomingTime, WalkDistance } from '../../utils/mappings'
 import style from '../general-info.module.css';
 import { Dog } from '../../utils/types';
-import { Guard } from '../../utils/mappings';
+import { Guard, Noise } from '../../utils/mappings';
 
 interface IStepProps {
     breed: Dog;
@@ -13,6 +13,7 @@ interface IStepProps {
 export default function Behaviour(props: IStepProps) {
 
     const guardMarks: Mark[] = Object.keys(Guard).map((it) => ({ value: +it, label: Guard[it as keyof typeof Guard] }))
+    const noiseMarks: Mark[] = Object.keys(Noise).map((it) => ({ value: +it, label: Noise[it as keyof typeof Noise] }))
 
 
     return <div className={style.generalInfoWrapper}>
@@ -22,14 +23,33 @@ export default function Behaviour(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={1}
+                defaultValue={0}
                 value={props.breed.guard}
                 onChange={(_, value) => { props.setDogProperty('guard', value)}}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
                 marks={guardMarks}
-                min={1}
+                min={0}
+                max={3}
+            />
+        </div>
+        <div className={style.item}>
+            <Typography id="discrete-slider" gutterBottom>
+                Noise
+            </Typography>
+            <Slider
+                className={style.slider}
+                defaultValue={0}
+                value={props.breed.noise}
+                onChange={(_, value) => {
+                    props.setDogProperty('noise', value)
+                }}
+                aria-labelledby="discrete-slider"
+                valueLabelDisplay="auto"
+                step={1}
+                marks={noiseMarks}
+                min={0}
                 max={3}
             />
         </div>

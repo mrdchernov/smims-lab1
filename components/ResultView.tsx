@@ -47,7 +47,7 @@ export const ResultView = (props: { dogs: Dog[], result: Dog, headerAction: () =
             width: 150,
             valueGetter: (params: GridValueGetterParams) => {
                 const percent = params.row.probability || '0';
-                return `${percent}%`
+                return `${+percent * 100}%`
             }
         }
     ];
