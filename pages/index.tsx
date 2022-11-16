@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Link from "next/link";
-import {Button} from "@material-ui/core";
+
+import {MainBlock} from "../components/MainBlocks";
 
 const Home: NextPage = () => {
   return (
@@ -14,12 +14,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Link href={'expert'} >
-            <Button >Expert Website</Button>
-        </Link>
-        <Link href={'client'} >
-            <Button>Client Website</Button>
-        </Link>
+          <MainBlock label={'Expert Website'} linkTo={'expert'} />
+          <MainBlock label={'Client Website'} linkTo={'client'} />
       </main>
     </div>
   )

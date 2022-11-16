@@ -10,3 +10,13 @@
 .generalInfoWrapper {
 
 }
+
+.mainBlockItem {
+    width: 20em;
+    padding: 10px;
+    height: 10em;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

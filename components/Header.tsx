@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Header(props: { actionBtn: JSX.Element }): JSX.Element {
+export default function Header(props: { actionBtn: JSX.Element, title: string }): JSX.Element {
     const classes = useStyles();
 
     return (
@@ -24,7 +24,7 @@ export default function Header(props: { actionBtn: JSX.Element }): JSX.Element {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        Expert View
+                        {props.title}
                     </Typography>
                     {props.actionBtn}
                 </Toolbar>
