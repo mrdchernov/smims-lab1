@@ -26,7 +26,6 @@ export default function Care(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={1}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 onChange={(_, value) => {
@@ -46,7 +45,6 @@ export default function Care(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={1}
                 aria-labelledby="discrete-slider"
                 value={props.breed.walk_distance}
                 onChange={(_, value) => {

@@ -59,7 +59,10 @@ export default function BehaviourInformation(props: IStepProps) {
                 onChange={() => {
                     props.setDogProperty('allergy', props.breed.allergy === 1 ? 0 : 1);
                 }}
-                control={<Checkbox name="checkedA"/>}
+                control={<Checkbox
+                    defaultChecked={true}
+                    value={props.breed.allergy === 1}
+                    name="checkedA"/>}
                 label="Can provoke allergy"
             />
         </div>

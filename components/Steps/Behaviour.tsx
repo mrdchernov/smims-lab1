@@ -23,7 +23,6 @@ export default function Behaviour(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={0}
                 value={props.breed.guard}
                 onChange={(_, value) => { props.setDogProperty('guard', value)}}
                 aria-labelledby="discrete-slider"
@@ -40,7 +39,6 @@ export default function Behaviour(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={0}
                 value={props.breed.noise}
                 onChange={(_, value) => {
                     props.setDogProperty('noise', value)
@@ -58,7 +56,8 @@ export default function Behaviour(props: IStepProps) {
             <FormControlLabel
                 value={props.breed.allergy === 1}
                 onChange={() => { props.setDogProperty('allergy', props.breed.allergy === 1 ? 0 : 1); }}
-                control={<Checkbox name="checkedA" />}
+                control={<Checkbox  defaultChecked={true}
+                                    value={props.breed.allergy === 1} name="checkedA" />}
                 label="Can be allergic"
             />
         </div>

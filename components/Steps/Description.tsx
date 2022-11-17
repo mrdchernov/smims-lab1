@@ -24,7 +24,6 @@ export default function Description(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={0}
                 onChange={(_, value) => {
                     props.setDogProperty('experience_required', value)
                 }}
@@ -44,7 +43,6 @@ export default function Description(props: IStepProps) {
             </Typography>
             <Slider
                 className={style.slider}
-                defaultValue={0}
                 value={props.breed.dog_size}
                 onChange={(_, value) => {
                     props.setDogProperty('dog_size', value)
@@ -63,7 +61,8 @@ export default function Description(props: IStepProps) {
                 onChange={() => {
                     props.setDogProperty('drools', props.breed.drools === 1 ? 0 : 1);
                 }}
-                control={<Checkbox name="checkedA"/>}
+                control={<Checkbox  defaultChecked={true}
+                                    value={props.breed.allergy === 1}  name="checkedA"/>}
                 label="Can have a lot of drools"
             />
         </div>

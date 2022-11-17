@@ -40,7 +40,7 @@ export default function CreateBreed(): JSX.Element {
     };
 
     const setDogProperty = (propertyName: string, value: any) => {
-        setDog({ ...newDogBreed, [propertyName]: value })
+        setDog({ ...newDogBreed, [propertyName]: value });
     }
 
     const handleBack = () => {
